@@ -35,7 +35,7 @@ transmitter tr(
     .rd_en_tx(rd_en_tx)
 );
 
-rx_fifo #(.WIDTH(8)) fifo_tx(
+fifo #(.WIDTH(8)) fifo_tx(
     .clk(clk),
     .reset_n(reset_n),
     .wr_en(w_e),
@@ -58,7 +58,7 @@ receiver rc(
     .wr_en_rx(wr_en_rx)
 );
 
-rx_fifo #(.WIDTH(9)) fifo_rx(
+fifo #(.WIDTH(9)) fifo_rx(
     .clk(clk),
     .reset_n(reset_n),
     .wr_en(wr_en_rx),
