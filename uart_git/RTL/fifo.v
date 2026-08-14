@@ -1,4 +1,4 @@
-module rx_fifo
+module fifo
 #(parameter WIDTH = 8)(
     input clk,
     input reset_n,
