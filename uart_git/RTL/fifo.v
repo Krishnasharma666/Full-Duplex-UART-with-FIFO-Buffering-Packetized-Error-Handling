@@ -27,10 +27,18 @@ always @(posedge clk) begin
         data_out <= 0;
     end else begin
         if(rd_en && wr_en) begin
+            if(empty) begin
+            mem[temp] <= data_in;
+            rear <= temp;
+            counter <= counter + 1;
+            end
+            else begin
+            
             mem[temp] <= data_in;
             rear <= temp;
             data_out <= mem[front];
             front <= front + 1;
+            end
         end
         else if(!rd_en && wr_en) begin
             if(!full) begin
